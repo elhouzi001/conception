@@ -1,13 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>My 3D Models</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean Dupont | Ingénieur en Conception Mécanique</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1>Welcome to My 3D Model Gallery</h1>
-    <p>Explore amazing 3D models below!</p>
-    <img src="model-preview.jpg" alt="3D Model Preview" class="model-image">
-    <a href="model-file.glb" download class="download-link">Download 3D Model</a>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#about">À propos de moi</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#formation">Formations</a></li>
+                <li><a href="#competences">Compétences</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <h1>Bienvenue dans le monde de la conception mécanique</h1>
+        <p class="subtitle">Innovation • Précision • Excellence</p>
+    </section>
+
+    <section id="about" class="about">
+        <h2>À propos de moi</h2>
+        <div class="about-content">
+            <img src="profile.jpg" alt="Photo professionnelle" class="profile-img">
+            <p>Ingénieur passionné par la conception mécanique avec plus de X années d'expérience...</p>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <h2>Mon expérience</h2>
+        <div class="experience-grid">
+            <div class="experience-item">
+                <i class="fas fa-cogs"></i>
+                <h3>Projet A</h3>
+                <p>Description du projet...</p>
+            </div>
+            <!-- Ajoutez d'autres expériences ici -->
+        </div>
+    </section>
+
+    <section id="formation" class="formation">
+        <h2>Mes formations</h2>
+        <div class="formation-timeline">
+            <div class="formation-item">
+                <h3>Diplôme d'Ingénieur</h3>
+                <p>École, Année</p>
+            </div>
+            <!-- Ajoutez d'autres formations ici -->
+        </div>
+    </section>
+
+    <section id="competences" class="competences">
+        <h2>Mes compétences</h2>
+        <div class="competences-grid">
+            <div class="competence-item">
+                <i class="fas fa-drafting-compass"></i>
+                <h3>CAO</h3>
+                <p>SolidWorks, CATIA, AutoCAD</p>
+            </div>
+            <!-- Ajoutez d'autres compétences ici -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="contact">
+            <a href="mailto:contact@example.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/votre-profil"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>Merci de votre visite !</p>
+    </footer>
+
+    <script>
+        // Animation au scroll pour le header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Animation au scroll pour les sections
+        window.addEventListener('scroll', function() {
+            const reveals = document.querySelectorAll('section');
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const revealTop = reveal.getBoundingClientRect().top;
+                if (revealTop < windowHeight - 150) {
+                    reveal.classList.add('reveal', 'active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
